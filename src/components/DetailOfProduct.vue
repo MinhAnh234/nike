@@ -273,6 +273,10 @@
               size:null,
               detail_images:null,
             }
+        }, created: function () {
+             this.$store.dispatch("DetailOfProduct");
+             this.$store.dispatch("detail_images_src");
+             this.$store.dispatch("getSizes");
         },
         computed: {
             sizes() {
@@ -309,9 +313,6 @@
             }
         },
         mounted() {
-             this.$store.dispatch("DetailOfProduct");
-             this.$store.dispatch("detail_images_src");
-             this.$store.dispatch("getSizes");
              $(document).ready(function () {
                 $('.cart').hide(); 
                 var itemsMainDiv = ('.MultiCarousel');
