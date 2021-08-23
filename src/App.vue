@@ -89,17 +89,6 @@
                 
             </div>
         </div>
-        <div class="test">
-           size {{ sizes }}
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-                        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0c6b0e30-ce2f-41fa-86b3-255dcf874399/air-jordan-1-mid-shoes-nwV1GK.png" alt="">
-
-        </div>
   </div>
 </template>
 
@@ -120,14 +109,8 @@ export default {
       return {
           allProducts:[],
       }
-  },  computed: {
-            sizes() {
-         
-                
-              return this.$store.state.sizes;
-            }},
+  },
    mounted() {
-        this.$store.dispatch("getSizes");
        $('.pre-logo-svg').click(function (){
            location.reload();
        })
