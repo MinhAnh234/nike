@@ -6,15 +6,18 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy" : "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "eslint-loader": "^2.1.2",
+    "express": "^4.17.1",
     "laravel-mix": "^6.0.25",
     "ngx-bootstrap": "^6.2.0",
+    "serve-static": "^1.14.1",
     "style-loader": "^3.1.0",
     "url-loader": "^4.1.1",
     "vue": "^2.6.11",
@@ -55,9 +58,7 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {
-      
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
