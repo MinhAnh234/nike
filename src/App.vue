@@ -114,10 +114,7 @@ export default {
        $('.pre-logo-svg').click(function (){
            location.reload();
        })
-     this.$store.dispatch("DetailOfProduct");
-            this.$store.dispatch("detail_images_src");
-            this.$store.dispatch("getSizes");
-            console.log(this.$store.state.sizes);
+    
       window.onload=function() {
            
     var leftMain = document.getElementById('left__menu__content');
