@@ -418,9 +418,9 @@
                   $('.summary>span:nth-child(1)').toggleClass('isActive');
                   $('.text').toggleClass('d-block');
             });
-          /*   this.$store.dispatch("DetailOfProduct");
+           this.$store.dispatch("DetailOfProduct");
              this.$store.dispatch("detail_images_src");
-             this.$store.dispatch("getSizes"); */
+             this.$store.dispatch("getSizes");
              this.DetailOfProduct_id_array=[];
              if(this.DetailOfProduct.id==this.$route.params.idDetail){
                     $( ".childImage" ).attr('id', 'currentImage');
