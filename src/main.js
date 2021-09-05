@@ -3,7 +3,7 @@ import App from './App.vue'
 import store from './store'
 import { router } from './routes'
 Vue.config.productionTip = false
-
+Vue.config.devtools = true
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import JQuery from 'jquery'

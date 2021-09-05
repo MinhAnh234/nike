@@ -3,8 +3,8 @@
       <div class="col-lg-11 main p-0" >
           
                             <div v-for="product in allProducts " :key="product.id" class="col-lg-3 col-sm-1 d-inline-block mt-4 mb-5 img-product pl-2">
-                                 <router-link :to="'/DetailOfProduct/'+product.id">
-                                         <img :src="product.imgSrc" style="max-height:500px; width: 550px;" alt="">
+                                 <router-link :to="'/DetailOfProduct/'+product.id+'/'+product.avatar_img[0].id">
+                                         <img :src="product.img" style="max-height:500px; width: 550px;" alt="">
                                   </router-link>
                                 <div class="warrap-product-info">
                                     <a href="" class="just-in mt-2 mb-2">Just In</a>

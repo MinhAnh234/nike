@@ -90,6 +90,9 @@ ul li {
     padding: 0 !important;
     max-width:19%;
 }
+.header-logo:hover{
+    cursor: pointer;
+}
 .img-product {
     max-width: 33.333333% !important;
     padding-right:0 !important;
@@ -152,7 +155,7 @@ ul li {
 #releases-menu ul li:nth-child(1) {
     margin-bottom: 50px;
 }
-#releases-menu ul li:nth-child(1) a {
+#releases-menu ul li:nth-child(1) a{
     color: black;
     margin-bottom: 50px !important;
     text-transform: uppercase;
@@ -166,6 +169,7 @@ ul li {
     margin-bottom: 10px;
 }
 #releases-menu ul li a {
+    
     padding-bottom: 2px;
     margin-bottom: 10px;
     height:20px;
@@ -217,6 +221,7 @@ ul li {
      margin-bottom: 10px;
  }
  #releases-men ul li a {
+     
      padding-bottom: 2px;
      margin-bottom: 10px;
      height:20px;

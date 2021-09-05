@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-8 view-header mx-auto mb-4">YOUR ACCOUNT FOR EVERYTHING NIKE</div>
             <div class="col-lg-11 mx-auto">
-                <small class="text-danger mb-2  error">{{ this.error }}</small>
+                <small class="text-danger mb-2 error" >{{ this.error }}</small>
                 <input type="email" name="email" class="form-control mb-2 " v-model="email" id="emailLogin" v-bind:class="{'is-invalid' :email==''| error!=''}" aria-describedby="emailHelp" placeholder="Enter email">
                 <small class="form-text text-danger mb-2  errorEmail invalid-feedback"></small>  
                 <input type="password" name="password" class="form-control mb-3" v-model="password" id="passwordLogin"  v-bind:class="{'is-invalid' :password==''| error!=''}" placeholder="Password">
@@ -279,12 +279,14 @@ export default {
                 $event.target.classList.add('border');
             },
             submitLogin() {
-                axios.post('http://127.0.0.1:8000/api/login', {
+                axios.post('https://nameless-cove-44446.herokuapp.com/api/login', {
                             email: this.email,
                             password: this.password,
                         })
                         .then((response) => {
                             this.hide();
+                            document.cookie = "user="+response.data.token;
+                            
                             localStorage.setItem("token",response.data.token);
                             localStorage.setItem("userInfo",JSON.stringify(  response.data));
                             this.reload++;
@@ -292,10 +294,11 @@ export default {
                         .catch((error) => {
                             $('#emailLogin').addClass("is-invalid");
                             $('#passwordLogin').addClass("is-invalid");
-                           this.error=error.response.data.error;    
+                            $('.error').show();
+                             this.error=error.response.data.error;    
                         });
             }, submitRegister() {
-                axios.post('http://127.0.0.1:8000/api/register', 
+                axios.post('https://nameless-cove-44446.herokuapp.com/api/register', 
                             this.registerUser,
                              {headers: {'Accept': 'application/json'}}
                             )

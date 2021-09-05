@@ -9,67 +9,82 @@ Vue.use(Vuex);
 const state = {
     allProducts: [],
     DetailOfProduct:[],
-    detail_images_src:[],
     sizes:[],
+    detailImg:[],
     cart:[],
+    avatar_Sizes:[]
 }
 
 
 const actions = {
     getAllProducts({ commit }) {
-        axios.get('https://nameless-cove-44446.herokuapp.com/api/allProducts')
+        axios.get('https://minhanhpkpro.000webhostapp.com/api/allProducts')
             .then(response => {
                 commit('set_allProducts', response.data)
         })
     },
     getCart({ commit }) {
-
         commit('set_cart',localStorage.getItem('cart'));
     },
-    getSizes({ commit }) {
-        axios.get('https://nameless-cove-44446.herokuapp.com/api/sizes')
+    getDetailImg({ commit },id) {
+        axios.get('https://minhanhpkpro.000webhostapp.com/api/detailProduct/'+id)
             .then(response => {
-                commit('set_Sizes', response.data)
+                commit('set_DetailImg', response.data)
         })
     },
-    DetailOfProduct({commit}) {
-        axios.get('https://nameless-cove-44446.herokuapp.com/api/DetailOfProduct')
+    getSizes({commit}) {
+        axios.get('https://minhanhpkpro.000webhostapp.com/api/sizes')
         .then(response=> {
-            commit('set_DetailOfProduct', response.data)
+            commit('set_Sizes', response.data)
         })
 
     },
-    detail_images_src({commit}) {
+    getAvatarSize({commit}) {
+        axios.get('http://127.0.0.1:8000/api/getAvatarSize')
+        .then(response=> {
+            commit('set_Avatar_Sizes', response.data)
+        })
+    },
+    getAllCart({commit}) {
+        commit('set_data',this.state.cart);
+    },
+  /*   detail_images_src({commit}) {
         axios.get('https://nameless-cove-44446.herokuapp.com/api/detail_images_src')
         .then(response=> {
             commit('set_detail_images_src', response.data)
         })
 
-    }
+    } */
 }
-const getter={}
+const getters={
+    cart: state => {return state.cart},
+}
 const mutations = {
     set_allProducts(state,allProducts ) {
         state.allProducts = allProducts;
     },
-    set_Sizes(state,sizes ) {
-        state.sizes = sizes;
+    set_DetailImg(state,detailImg ) {
+        state.detailImg = detailImg;
     },
-    set_DetailOfProduct(state,DetailOfProduct){
-        state.DetailOfProduct= DetailOfProduct;
+    set_Sizes(state,sizes){
+        state.sizes= sizes;
     },
-    set_detail_images_src(state,detail_images_src){
-        state.detail_images_src= detail_images_src;
+    set_Avatar_Sizes(state,avatar_Sizes){
+        state.avatar_Sizes= avatar_Sizes;
     },
     set_cart(state,cart){
         state.cart.push(cart);
+    },
+    set_data(state,set){
+        state.cart=set;
     }
     
 }
 export default new Vuex.Store({
     state,
     actions,
-    getter,
+    getters,
     mutations,
+    strict: process.env.NODE_ENV !== 'production'
     
 })
