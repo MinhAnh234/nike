@@ -4,7 +4,7 @@
         <i style="color: green;" class="fas fa-check-circle m-3"></i>
         <span class=" ml-3">Added to Bag</span>
         <span class="mr-4 mt-2 destroy">X</span>
-        <div class="d-none">{{ cart }}</div> 
+      
         <div id="cart-warrap">
             <img style="width:90px;height:90px;vertical-align: top"   class="m-3" :src="cartProduct.product_image" alt="">
             <ul class="d-inline-block mt-3">
@@ -42,9 +42,7 @@
             cartProduct() {
                 return  JSON.parse(localStorage.getItem('cart'));
             },
-            cart() {
-                return this.$store.state.cart;
-            }
+         
         },
     
         methods: {

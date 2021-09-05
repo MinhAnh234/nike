@@ -404,9 +404,6 @@
                             }
                           
                             localStorage.setItem('allItems', JSON.stringify(allItems));
-                            console.log(allItems[0]);
-                            console.log(newItem);
-                            console.log(allItems[0].product_category==newItem.product_category);
                         }
                         else {
                            var allItems= [];
@@ -417,7 +414,7 @@
                         localStorage.setItem('totalCount', count);
                         $('#count').html(count);
                         localStorage.setItem('cart', JSON.stringify(newItem));
-                        this.$store.dispatch("getCart");
+                        this.comics_reload++;
                       
                         $('#psudo-background2').show();
                          $('.cart').show();
